@@ -1,10 +1,11 @@
 {
-  "name": "compolomus/zip-helper",
-  "description": "Zip Helper",
+  "name": "compolomus/fs-helper",
+  "description": "FileSystem Helper",
   "license": "MIT",
   "keywords": [
     "ZipArchive",
-    "Helper"
+    "Helper",
+    "FileSystem"
   ],
   "type": "library",
   "authors": [
@@ -15,7 +16,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Compolomus\\ZipHelper\\": "src/"
+      "Compolomus\\FSHelper\\": "src/"
     }
   },
   "require": {
