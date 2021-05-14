@@ -18,12 +18,13 @@ composer require compolomus/fs-helper
 
 ```php
 use Compolomus\FSHelper\FSHelper;
+use Compolomus\FSHelper\ZipHelper;
 
 $dir = '../';
 
 echo '<pre>' . print_r(FSHelper::getInfoDirectory($dir), true) . '</pre>';
 
-FSHelper::addDirectoryToZipArchive($dir);
+ZipHelper::createArchiveFromDirectory($dir);
 ```
 
 ## Testing
