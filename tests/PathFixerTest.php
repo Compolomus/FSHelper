@@ -10,36 +10,38 @@ use PHPUnit\Framework\TestCase;
 
 class PathFixerTest extends TestCase
 {
+    private string $path = __DIR__ . '/demo';
+
     public function test__construct(): void
     {
-        $object = new PathFixer('/tmp');
+        $object = new PathFixer($this->path);
         self::assertInstanceOf(PathFixer::class, $object);
     }
 
     public function test__construct_pathNotFoundException(): void
     {
         $this->expectException(PathNotFoundException::class);
-        new PathFixer('/tmp/path_not_found');
+        new PathFixer($this->path . '/path_not_found');
     }
 
     public function test_getPath(): void
     {
-        $object = new PathFixer('/tmp');
+        $object = new PathFixer($this->path);
         $test   = $object->getPath();
-        self::assertEquals('/tmp', $test);
+        self::assertEquals($this->path, $test);
     }
 
     public function test_getTrimLength(): void
     {
-        $object = new PathFixer('/tmp');
+        $object = new PathFixer($this->path);
         $test   = $object->getTrimLength();
-        self::assertEquals(1, $test);
+        self::assertEquals(63, $test);
     }
 
     public function test_fix(): void
     {
-        $object = new PathFixer('/tmp');
-        $test   = $object->fix('/tmp/test');
-        self::assertEquals('tmp/test', $test);
+        $object = new PathFixer($this->path);
+        $test   = $object->fix($this->path . '/test');
+        self::assertEquals('demo/test', $test);
     }
 }
