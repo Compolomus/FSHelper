@@ -8,10 +8,28 @@
 [![Code Climate](https://codeclimate.com/github/Compolomus/FSHelper/badges/gpa.svg)](https://codeclimate.com/github/Compolomus/FSHelper)
 [![Downloads](https://poser.pugx.org/compolomus/FSHelper/downloads)](https://packagist.org/packages/compolomus/fs-helper)
 
-# Install:
+## Install
 
+```shell
 composer require compolomus/fs-helper
+```
 
-# Usage:
+## Usage
 
-See example
+```php
+use Compolomus\FSHelper\FSHelper;
+
+$dir = '../';
+
+echo '<pre>' . print_r(FSHelper::getInfoDirectory($dir), true) . '</pre>';
+
+FSHelper::addDirectoryToZipArchive($dir);
+```
+
+## Testing
+
+You just need to run following command:
+
+```shell
+./vendor/bin/phpunit
+```
