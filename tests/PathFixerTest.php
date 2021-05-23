@@ -35,7 +35,7 @@ class PathFixerTest extends TestCase
     {
         $object = new PathFixer($this->path);
         $test   = $object->getTrimLength();
-        self::assertEquals(63, $test);
+        self::assertEquals(39, $test);
     }
 
     public function test_fix(): void
