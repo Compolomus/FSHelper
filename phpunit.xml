@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="./vendor/autoload.php"
-         colors="true"
-         verbose="true"
->
-    <php>
-        <ini name="error_reporting" value="-1"/>
-        <ini name="xdebug.mode" value="coverage"/>
-        <env name="XDEBUG_MODE" value="coverage"/>
-    </php>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php" colors="true" convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false"
+         stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage processUncoveredFiles="true">
+        <report>
+            <clover outputFile="coverage.xml"/>
+        </report>
+        <include>
+            <directory suffix=".php">./tests/</directory>
+        </include>
+    </coverage>
     <testsuites>
         <testsuite name="FileSystem Helper tests">
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">./tests/</directory>
-        </include>
-    </coverage>
 </phpunit>
