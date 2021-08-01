@@ -11,7 +11,7 @@
     </coverage>
 
     <testsuites>
-        <testsuite name="mobicms-render">
+        <testsuite name="FileSystem Helper tests">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
