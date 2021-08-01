@@ -16,9 +16,7 @@ class FSHelper
      * Return all object with information about all files and folder by provided path
      *
      * @param string $directoryPath Absolute or relative path
-     *
-     * @return \RecursiveIteratorIterator
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     public static function getAll(string $directoryPath): RecursiveIteratorIterator
     {
@@ -42,9 +40,7 @@ class FSHelper
      * Return objects of all directories by provided path
      *
      * @param string $directoryPath Absolute or relative path
-     *
-     * @return \CallbackFilterIterator
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     public static function getDirectories(string $directoryPath): CallbackFilterIterator
     {
@@ -57,9 +53,7 @@ class FSHelper
      * Return objects of all files by provided path
      *
      * @param string $directoryPath Absolute or relative path
-     *
-     * @return \CallbackFilterIterator
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     public static function getFiles(string $directoryPath): CallbackFilterIterator
     {
@@ -72,9 +66,7 @@ class FSHelper
      * Get total size of all files by provided path (in bytes)
      *
      * @param string $directoryPath Absolute or relative path
-     *
-     * @return int
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     public static function getFilesSize(string $directoryPath): int
     {
@@ -90,9 +82,8 @@ class FSHelper
      * Return meta information about files and directories
      *
      * @param string $directoryPath Absolute or relative path
-     *
-     * @return array
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @return array<string, mixed>
+     * @throws PathNotFoundException
      */
     public static function getInfoDirectory(string $directoryPath): array
     {

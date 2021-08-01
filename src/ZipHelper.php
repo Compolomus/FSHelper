@@ -10,8 +10,6 @@ class ZipHelper
 {
     /**
      * Return string with default name of archive
-     *
-     * @return string
      */
     public static function generateRandomNameOfArchive(): string
     {
@@ -26,10 +24,8 @@ class ZipHelper
      *
      * @param string      $directoryPath Absolute or relative path
      * @param null|string $name          Name of archive, if empty the will be generated
-     *
-     * @return string Name with path to file
      */
-    public static function createArchiveFromDirectory(string $directoryPath, string $name = null): string
+    public static function createArchiveFromDirectory(string $directoryPath, ?string $name = null): string
     {
         if (empty($name)) {
             $name = self::generateRandomNameOfArchive();

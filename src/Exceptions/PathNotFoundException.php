@@ -1,20 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Compolomus\FSHelper\Exceptions;
 
 use RuntimeException;
 
 class PathNotFoundException extends RuntimeException
 {
-    protected $message = 'Provided path does not exists';
-
-    public function __construct($message = "")
+    public function __construct(string $message = '')
     {
-        $message =
+        $notice = 'Provided path does not exists';
+        parent::__construct(
             !empty($message)
-                ? $this->message . ': ' . $message
-                : $this->message;
-
-        parent::__construct($message);
+                ? $notice . ': ' . $message
+                : $notice
+        );
     }
 }
