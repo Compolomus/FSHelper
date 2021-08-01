@@ -10,24 +10,17 @@ class PathFixer
 {
     /**
      * Absolute or relative path
-     *
-     * @var string
      */
     private string $path;
 
     /**
      * Amount of symbols which can be removed from provided path
-     *
-     * @var int
      */
     private int $trimLength;
 
     /**
      * PathFixer constructor.
-     *
-     * @param string $path
-     *
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     public function __construct(string $path)
     {
@@ -38,7 +31,7 @@ class PathFixer
     /**
      * Provided path processing
      *
-     * @throws \Compolomus\FSHelper\Exceptions\PathNotFoundException
+     * @throws PathNotFoundException
      */
     private function execute(): void
     {
@@ -59,10 +52,6 @@ class PathFixer
 
     /**
      * Remove required amount of characters from start of provided path
-     *
-     * @param string $path
-     *
-     * @return string
      */
     public function fix(string $path): string
     {
@@ -71,8 +60,6 @@ class PathFixer
 
     /**
      * Return path added via constructor
-     *
-     * @return string
      */
     public function getPath(): string
     {
@@ -81,8 +68,6 @@ class PathFixer
 
     /**
      * Return amount of symbols which will be trimmed
-     *
-     * @return int
      */
     public function getTrimLength(): int
     {
